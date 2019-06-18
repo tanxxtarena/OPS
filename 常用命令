@@ -1,0 +1,5 @@
+1、nginx命令
+    启动： sudo ./nginx
+    关闭： sudo ./nginx -s stop
+    重启： sudo ./nginx -s reload
+    
