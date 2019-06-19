@@ -1,1 +1,49 @@
-docker笔记
+
+解决了运行环境和配置问题软件容器，方便做持续集成并有助于整体发布的容器虚拟化技术。
+
+仓库：存储镜像的仓库
+镜像：就是模板
+容器：就是镜像的一个实例，容器是用镜像创建的运行实例。  可以启动、停止、删除
+		可以看做是一个简易版的Linux环境。
+
+Person p1 = new Person();
+
+p1:容器，Person：镜像 类比
+
+
+
+安装要求：
+	centos 6.5或更高  系统内核版本为2.6.32-431或者更高版本。
+	
+	uname -r 查看内核版本
+	
+	cat /etc/redhat-release
+	
+	推荐6.8或者以上
+  
+修改yum配置
+vi /etc/yum.repos.d/CentOS-Base.repo
+[base]
+name=CentOS-$releasever - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
+baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+
+	
+安装：
+	1、yum install -y epel-release
+	2、yum install -y docker-io
+	3、安装后的配置文件：/etc/sysconfig/docker-io
+	4、启动Docker后台服务：service docker start
+	5、验证：docker version
+	
+阿里云镜像加速器：https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+
+修改配置
+https://bqkjx1bi.mirror.aliyuncs.com
+
+vi /etc/sysconfig/docker
+other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
+
+后面的地址，要对应自己的阿里云镜像地址
+
+测试：docker run hello-world
