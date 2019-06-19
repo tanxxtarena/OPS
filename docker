@@ -32,7 +32,8 @@ baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
 安装：
 	1、yum install -y epel-release
 	2、yum install -y docker-io
-	3、安装后的配置文件：/etc/sysconfig/docker-io
+	   如果失败：yum install https://get.docker.com/rpm/1.7.1/centos-6/RPMS/x86_64/docker-engine-1.7.1-1.el6.x86_64.rpm
+	3、安装后的配置文件：/etc/sysconfig/docker
 	4、启动Docker后台服务：service docker start
 	5、验证：docker version
 	
