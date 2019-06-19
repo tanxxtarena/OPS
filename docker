@@ -48,3 +48,22 @@ other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
 后面的地址，要对应自己的阿里云镜像地址
 
 测试：docker run hello-world
+
+安装nginx
+拉取：docker pull nginx
+本地镜像列表里查: docker images nginx
+启动：docker run --name runoob-nginx-test -p 8081:80 -d nginx
+测试：http://IP:8081
+查看进程：docker ps 
+
+
+
+
+
+
+
+
+
+
+
+
