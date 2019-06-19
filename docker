@@ -49,13 +49,32 @@ other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
 
 测试：docker run hello-world
 
+鲸鱼背上集装箱
+蓝色的大海 ---window10
+鲸鱼 --docker
+集装箱 --容器实例 from 我们的镜像模板
+
+帮助命令：
+   docker version
+   docker info
+   docker --help
+镜像命令：
+   docker images
+   REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+   镜像的仓库源         标签                 镜像ID               创建时间           大小
+   
+容器命令：
+   
+小结：
+
 安装nginx
 拉取：docker pull nginx
 本地镜像列表里查: docker images nginx
 启动：docker run --name runoob-nginx-test -p 8081:80 -d nginx
 测试：http://IP:8081
 查看进程：docker ps 
-
+杀死进程：docker kill -s HUP container-name
+重启：docker restart container-name
 
 
 
