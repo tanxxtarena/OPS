@@ -58,10 +58,23 @@ other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
    docker version
    docker info
    docker --help
-镜像命令：
-   docker images
+镜像命令：可以理解为一个千层饼
+   docker images [-a -q --digets --no-trunc] 显示镜像的ID
    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
    镜像的仓库源         标签                 镜像ID               创建时间           大小
+   
+   docker search 镜像名称
+   docker search -s 30 [--no-trunc] tomcat : starts大于30的显示出来
+   
+   docker pull tomcat === docker pull tomcat:latest
+   
+   docker rmi 删除镜像
+   docker rmi -f hello-world:强制删除
+   
+   
+   
+   
+   
    
 容器命令：
    
