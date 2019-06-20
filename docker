@@ -104,12 +104,34 @@ other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
    docker logs -f -t --tail 容器ID
    docker top 容器ID 查看容器内的进程
    docker inspect 容器ID 查看容器内部细节
+   docker attach 容器ID 重启进入退出没有被关闭的容器
+   docker exec -t 容器ID ls -ls /tmp 直接执行后面的命令，但不进入容器，加/bin/bash 也可以进入容器
+   docker cp 容器ID:容器内路径  目的主机路径 // 从容器内拷贝数据到主机上
+------------------------------------------------------
+   镜像：轻量级，可执行的独立软件包，用来打包软件运行环境和基于运行环境开发的软件。
+   UnionFS:联合文件系统，是一种分层，轻量级并且高性能的文件系统。它支持对文件系统的修改作为一次提交来一层层的叠加。
+   Docker镜像加载原理： 主要包含：bootloader和kernel，bootloader主要是引导加载kernel。
+   分层：可以让多个镜像可以共享bash镜像
+   容器层--》镜像层
+   
+   --提交一个新的镜像操作
+   docker commit 提交容器副本使之成为一个新的镜像
+   docker commit -m '描述' -a '作者' 容器ID要创建的目标镜像名:[标签名]
+   eg:
+   docker run -it -p 8888:8080 tomcat //其中8888是对外的访问端口，对应的8080是内部的端口
+   docker run -it -P tomcat //随机分配端口,是大P
+   docker commit -a 'author' -m 'del docs' 容器ID test/mytomcat:1.0
+   docker push 容器ID，提交到自己的镜像云上面
+ ---------------------------------------------------
+   容器数据卷：数据共享和持久化
+   主机到容器，容器到主机的数据共享
+   
+   数据卷： 
+      容器内添加：
+      
    
    
    
-   
-小结：
-
 安装nginx
 拉取：docker pull nginx
 本地镜像列表里查: docker images nginx
