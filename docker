@@ -10,16 +10,11 @@ Person p1 = new Person();
 
 p1:容器，Person：镜像 类比
 
-
-
 安装要求：
-	centos 6.5或更高  系统内核版本为2.6.32-431或者更高版本。
-	
-	uname -r 查看内核版本
-	
-	cat /etc/redhat-release
-	
-	推荐6.8或者以上
+   centos 6.5或更高  系统内核版本为2.6.32-431或者更高版本。
+   uname -r 查看内核版本
+   cat /etc/redhat-release
+   推荐6.8或者以上
   
 修改yum配置
 vi /etc/yum.repos.d/CentOS-Base.repo
@@ -27,7 +22,6 @@ vi /etc/yum.repos.d/CentOS-Base.repo
 name=CentOS-$releasever - Base
 #mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
 baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-
 	
 安装：
 	1、yum install -y epel-release
@@ -127,7 +121,8 @@ other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
    主机到容器，容器到主机的数据共享
    
    数据卷： 
-      容器内添加：
+      容器内添加：docker run -it -v /宿主机绝对路径目录:/容器内目录 镜像名
+      eg: 
       
    
    
