@@ -124,9 +124,16 @@ other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
       容器内添加：docker run -it -v /宿主机绝对路径目录:/容器内目录 镜像名
       eg: 
       docker run -it -v /myDataVolume:/dataVolumeContainer 镜像名
-      docker inspect 容器ID
+      docker inspect 容器ID //查看容器内容描述
       docker start 上次的容器ID 可以启动同一个容器
       docker run -it -v /myDataVolume:/dataVolumeContainer:ro 镜像名 //只读的数据卷
+      如果出现没有权限 可以添加 --privileged=true
+      docker run -it -v /myDataVolume:/dataVolumeContainer --privileged=true 镜像名
+      
+      dockerfile创建数据卷：
+      在hub.docker.com中，可以看到对应的镜像的dockerfile描述文件
+      docker build -f /mydocker/Dockerfile -t test/centos . //构建一个镜像文件
+      docker run -it 自定义的镜像 
       
    
    
