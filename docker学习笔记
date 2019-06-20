@@ -123,6 +123,10 @@ other_args="--registry-mirror=https://bqkjx1bi.mirror.aliyuncs.com"
    数据卷： 
       容器内添加：docker run -it -v /宿主机绝对路径目录:/容器内目录 镜像名
       eg: 
+      docker run -it -v /myDataVolume:/dataVolumeContainer 镜像名
+      docker inspect 容器ID
+      docker start 上次的容器ID 可以启动同一个容器
+      docker run -it -v /myDataVolume:/dataVolumeContainer:ro 镜像名 //只读的数据卷
       
    
    
